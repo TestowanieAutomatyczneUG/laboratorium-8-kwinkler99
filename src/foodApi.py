@@ -30,3 +30,17 @@ class Food:
     def get_all_meal_categories(self):
         meals = requests.get('https://www.themealdb.com/api/json/v1/1/categories.php')
         return meals.json()
+
+    def get_all_categories(self):
+        meals = requests.get('https://www.themealdb.com/api/json/v1/1/list.php?c=list')
+        return meals.json()
+
+    def get_all_area(self):
+        meals = requests.get('https://www.themealdb.com/api/json/v1/1/list.php?a=list')
+        return meals.json()
+
+    def get_add_ingredients(self):
+        meals = requests.get('https://www.themealdb.com/api/json/v1/1/list.php?i=list')
+        return meals.json()
+
+    

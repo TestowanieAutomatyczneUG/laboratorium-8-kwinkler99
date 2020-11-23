@@ -58,7 +58,7 @@ class FoodApiTest(unittest.TestCase):
             category.append(meal['categories'][i]['strCategory'])
         self.assertEqual(category,
                          [
-                            "Beef",
+                             "Beef",
                              "Chicken",
                              "Dessert",
                              "Lamb",
@@ -73,8 +73,6 @@ class FoodApiTest(unittest.TestCase):
                              "Breakfast",
                              "Goat"
                          ])
-
-
 
     def tearDown(self):
         self.temp = None
