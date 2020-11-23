@@ -8,3 +8,10 @@ class Food:
             return meals.json()
         else:
             raise TypeError('Not string!')
+
+    def get_list_by_first_letter(self, letter):
+        if type(letter) == str:
+            meals = requests.get('https://www.themealdb.com/api/json/v1/1/search.php?f='+letter)
+            return meals.json()
+        else:
+            raise TypeError('Not string!')
