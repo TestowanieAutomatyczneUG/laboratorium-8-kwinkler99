@@ -22,3 +22,7 @@ class Food:
             return meals.json()
         else:
             raise TypeError('Not string!')
+
+    def get_single_random_meal(self):
+        meals = requests.get('https://www.themealdb.com/api/json/v1/1/random.php')
+        return meals.json()

@@ -44,7 +44,12 @@ class FoodApiTest(unittest.TestCase):
     def test_by_id_int(self):
         self.assertRaises(TypeError, self.temp.get_meal_by_id, 20)
 
+    def test_single_random_meal_one(self):
+        meal = self.temp.get_single_random_meal()
+        self.assertEqual(len(meal['meals']), 1)
 
+    def test_single_random_meal_two(self):
+        self.assertRaises(TypeError, self.temp.get_single_random_meal, "test")
 
     def tearDown(self):
         self.temp = None
