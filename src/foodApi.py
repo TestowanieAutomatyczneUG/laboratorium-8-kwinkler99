@@ -43,4 +43,7 @@ class Food:
         meals = requests.get('https://www.themealdb.com/api/json/v1/1/list.php?i=list')
         return meals.json()
 
-    
+    def get_filter_by_main_ingredient(self, ingredient):
+        meals = requests.get('https://www.themealdb.com/api/json/v1/1/filter.php?i='+ingredient)
+        return meals.json()
+
