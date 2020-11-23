@@ -4,21 +4,21 @@ import requests
 class Food:
     def get_meal_by_name(self, meal):
         if type(meal) == str:
-            meals = requests.get('https://www.themealdb.com/api/json/v1/1/search.php?s='+meal)
+            meals = requests.get('https://www.themealdb.com/api/json/v1/1/search.php?s=' + meal)
             return meals.json()
         else:
             raise TypeError('Not string!')
 
     def get_list_by_first_letter(self, letter):
         if type(letter) == str:
-            meals = requests.get('https://www.themealdb.com/api/json/v1/1/search.php?f='+letter)
+            meals = requests.get('https://www.themealdb.com/api/json/v1/1/search.php?f=' + letter)
             return meals.json()
         else:
             raise TypeError('Not string!')
 
     def get_meal_by_id(self, id):
         if type(id) == str:
-            meals = requests.get('https://www.themealdb.com/api/json/v1/1/lookup.php?i='+id)
+            meals = requests.get('https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + id)
             return meals.json()
         else:
             raise TypeError('Not string!')
@@ -44,12 +44,13 @@ class Food:
         return meals.json()
 
     def get_filter_by_main_ingredient(self, ingredient):
-        meals = requests.get('https://www.themealdb.com/api/json/v1/1/filter.php?i='+ingredient)
+        meals = requests.get('https://www.themealdb.com/api/json/v1/1/filter.php?i=' + ingredient)
         return meals.json()
 
     def get_filter_by_category(self, category):
-        meals = requests.get('https://www.themealdb.com/api/json/v1/1/filter.php?c='+category)
+        meals = requests.get('https://www.themealdb.com/api/json/v1/1/filter.php?c=' + category)
         return meals.json()
 
-
-
+    def get_filter_by_area(self, area):
+        meals = requests.get('https://www.themealdb.com/api/json/v1/1/filter.php?a=' + area)
+        return meals.json()
