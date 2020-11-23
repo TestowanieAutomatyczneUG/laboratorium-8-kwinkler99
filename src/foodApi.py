@@ -26,3 +26,7 @@ class Food:
     def get_single_random_meal(self):
         meals = requests.get('https://www.themealdb.com/api/json/v1/1/random.php')
         return meals.json()
+
+    def get_all_meal_categories(self):
+        meals = requests.get('https://www.themealdb.com/api/json/v1/1/categories.php')
+        return meals.json()

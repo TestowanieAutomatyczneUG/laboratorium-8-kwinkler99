@@ -51,6 +51,31 @@ class FoodApiTest(unittest.TestCase):
     def test_single_random_meal_two(self):
         self.assertRaises(TypeError, self.temp.get_single_random_meal, "test")
 
+    def test_all_meal_categories(self):
+        meal = self.temp.get_all_meal_categories()
+        category = []
+        for i in range(len(meal['categories'])):
+            category.append(meal['categories'][i]['strCategory'])
+        self.assertEqual(category,
+                         [
+                            "Beef",
+                             "Chicken",
+                             "Dessert",
+                             "Lamb",
+                             "Miscellaneous",
+                             "Pasta",
+                             "Pork",
+                             "Seafood",
+                             "Side",
+                             "Starter",
+                             "Vegan",
+                             "Vegetarian",
+                             "Breakfast",
+                             "Goat"
+                         ])
+
+
+
     def tearDown(self):
         self.temp = None
 
