@@ -33,6 +33,19 @@ class FoodApiTest(unittest.TestCase):
     def test_by_first_letter_list(self):
         self.assertRaises(TypeError, self.temp.get_list_by_first_letter, ["a", "b"])
 
+    def test_by_id_one(self):
+        meal = self.temp.get_meal_by_id("52772")
+        self.assertEqual(meal['meals'][0]['strCategory'], "Chicken")
+
+    def test_by_id_two(self):
+        meal = self.temp.get_meal_by_id("52768")
+        self.assertEqual(meal['meals'][0]['strMeasure1'], "175g/6oz")
+
+    def test_by_id_int(self):
+        self.assertRaises(TypeError, self.temp.get_meal_by_id, 20)
+
+
+
     def tearDown(self):
         self.temp = None
 
